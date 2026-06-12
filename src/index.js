@@ -286,7 +286,9 @@ const DigitalLink = input => {
   }
 
   if (typeof input === 'string') {
-    decode(result[model], isCompressedWebUri(input) ? decompressWebUri(input) : input);
+    //decode(result[model], isCompressedWebUri(input) ? decompressWebUri(input) : input);
+    // chbeer: disabled decompressing for now since it decompressed accidentally our IDs
+    decode(result[model], input);
   }
 
   result.setDomain = domain => {
